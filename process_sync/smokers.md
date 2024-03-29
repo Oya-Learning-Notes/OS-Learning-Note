@@ -37,13 +37,15 @@ First consider the agent code is like below:
 
 ```cpp
 void agent(){
-    wait(smokingStopped); // only when no one is smoking then agent should put something on desk
+    while(true){
+        wait(smokingStopped); // only when no one is smoking then agent should put something on desk
 
-    int rnd = rand(1, 3); // make a random number in range [1, 3]
+        int rnd = rand(1, 3); // make a random number in range [1, 3]
 
-    if(rnd != 1) signal(tobaccoOnDesk);
-    if(rnd != 2) signal(paperOnDesk);
-    if(rnd != 3) signal(matchOnDesk);
+        if(rnd != 1) signal(tobaccoOnDesk);
+        if(rnd != 2) signal(paperOnDesk);
+        if(rnd != 3) signal(matchOnDesk);
+    }
 }
 ```
 
@@ -51,10 +53,12 @@ Consider the smokers processes is like:
 
 ```cpp
 void smokersWithTobacco(int holdingResType){
-    wait(paperOnDesk);
-    wait(matchOnDesk);
-    smoking();
-    signal(smokingStopped);
+    while(true){
+        wait(paperOnDesk);
+        wait(matchOnDesk);
+        smoking();
+        signal(smokingStopped);
+    }
 }
 ```
 
@@ -72,9 +76,11 @@ We need to slightly change our smoker processes into below:
 
 ```cpp
 void smokerWithTobacco(){
-    wait(paperOnDesk, matchOnDesk);
-    smoking();
-    signal(smokingStopped);
+    while(true){
+        wait(paperOnDesk, matchOnDesk);
+        smoking();
+        signal(smokingStopped);
+    }
 }
 ```
 
@@ -82,6 +88,52 @@ Other smokers are similar.
 
 In this code, `wait(paperOnDesk, matchOnDesk);` will promise the two lock will either both acquired or all will be released.
 
+## If Agent Process Changeable
+
+Things will be pretty simple if we could change the code inside agent process, we just need to let agent wake up the proper smoker.
+
+```cpp
+semaphore smoker[3] = {0, 0, 0};
+semaphore res[3] = {0, 0, 0};
+semaphore rest = 1;
+
+void agent(){
+    while(true){
+        wait(rest);
+        int rnd = rand(3); // rand range [0, 2]
+
+        for(int i = 0; i < 3; ++i){
+            if(i != rnd){
+                signal(res[i]); // add resources to desk
+            }
+        }
+
+        signal(smokers[rnd]); // wake up proper smokers
+    }
+}
+
+// other smokers processes are similar
+void smokerWithTobacco(){
+    while(true){
+        wait(smokers[0]); // wait for corresponding type
+
+        // wait resources
+        wait(res[1]);
+        wait(res[2]);
+
+        // do smoking
+        smoking();
+
+        // call agent, tell him the smoking finished
+        signal(rest);
+    }
+}
+```
+
+Actually in this example, the **semaphore list `res` becomes unnecessary** since we could only use `smokers` semaphore list to promise only the right smokers do the smoke.
+
 # Ref
 
 [Open CSF - Cigarette Smokers Problems](https://w3.cs.jmu.edu/kirkpams/OpenCSF/Books/csf/html/CigSmokers.html)
+
+[CSDN - 5 Classical Process Syncing Problem Model](https://blog.csdn.net/Naruto_ahu/article/details/8672376)
