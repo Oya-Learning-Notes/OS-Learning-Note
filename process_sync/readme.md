@@ -14,6 +14,6 @@ This directory is about the process syncing problem in OS.
 
 This model proved that the traditional semaphore primitive `wait` / `signal` (or you can say `P` and `V` operation) is not capable for all possible process syncing problem.
 
-# More Exercise Problems
+# Need More Exercise?
 
 Check [Other Exercises](./other_exercise) for more info.
