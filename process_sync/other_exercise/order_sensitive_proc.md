@@ -6,6 +6,8 @@ There are 3 company parallel processes `P1` `P2` and `P3`. They get input from a
 
 Input must be in order, and `P1` is responsible to read `a` from device, `P2` is responsible to read `b` from device etc.
 
+Besides the input task, these three process is responsible to do some calculation based on the input data, and then process P1 is responsible to print out final result. 
+
 # Code Implementation
 
 ```cpp
