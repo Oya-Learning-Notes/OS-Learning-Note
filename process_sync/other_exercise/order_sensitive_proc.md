@@ -29,7 +29,7 @@ void p1(){
     signal(p1ReadFin);
 
     // calculate
-    wait(p3ReadFin, 1, 0);
+    wait(p2ReadFin, 1, 0);
     x = a + b;
     signal(calcuFinCount, 1);
 
@@ -78,3 +78,14 @@ Then we could find some dependency is unnecessary as the green line below:
 Finally we just need to use semaphore to implement this process sequence control:
 
 ![image](https://github.com/Oya-Learning-Notes/OS-Learning-Note/assets/61616918/16cd558e-cf75-4d99-9f72-4f9d68f35869)
+
+As you see at the diagram above, something that worth talk about is:
+
+- `P1 Calc` and `P2 Calc` actually only depend on `P2 Read` is finished. Since `P2 Read` finished must mean that both `a` and `b` are read.
+- `P3 Calc` not only depend of `P3 Read` (at this time all input operations are finished, means both `a`, `b`, `c` are available) but also depend on `P2 Calc`, this is because the calculation of `z` depend on the value of `y` which will only available after `P2 Calc` finished.
+
+## About The Implementation
+
+In the implementation we use a lot of _switch_ schema for semaphore waiting. That is `wait(S, t, 0)`, this means when `S > t` then the switch is open and operation is allowed, but the value of `S` will remain and won't be decreased.
+
+Also, the implementation above is **based on the assumptions that those variable `a`, `b`, `c` is not critical towards reading operation**, means more than one processes reading this variable at the same time is acceptable. If not then the implementation need to be modified to protect there is only one process reading the variable at the same time.
