@@ -1,1 +1,2 @@
-*/test.cpp
+# ignore all test cpp files
+**/test.cpp
