@@ -28,42 +28,42 @@ DataType x, y, z;
 void p1(){
     // read
     a = readFromInput();
-    signal(p1ReadFin);
+    Ssignal(p1ReadFin, 1);
 
     // calculate
-    wait(p2ReadFin, 1, 0);
+    Swait(p2ReadFin, 1, 0);
     x = a + b;
-    signal(calcuFinCount, 1);
+    Ssignal(calcuFinCount, 1);
 
     // print
-    wait(calcuFinCount, 3, 0);
+    Swait(calcuFinCount, 3, 0);
     printResult(x, y, z);
 }
 
 void p2(){
     // read
-    wait(p1ReadFin, 1, 0);
+    Swait(p1ReadFin, 1, 0);
     b = readFromInput();
-    signal(p2ReadFin);
+    Ssignal(p2ReadFin);
 
     // calculate
-    wait(p2ReadFin, 1, 0);
+    Swait(p2ReadFin, 1, 0);
     y = a * b;
-    signal(calcuFinCount, 1);
-    signal(yCalcuFin);
+    Ssignal(calcuFinCount, 1);
+    Ssignal(yCalcuFin, 1);
 }
 
 void p3(){
     // read
-    wait(p2ReadFin, 1, 0);
+    Swait(p2ReadFin, 1, 0);
     c = readFromInput();
-    signal(p3ReadFin);
+    Ssignal(p3ReadFin, 1);
 
     // calculate
-    wait(yCalcuFin, 1, 0);
-    wait(p3ReadFin, 1, 0);
+    Swait(yCalcuFin, 1, 0);
+    Swait(p3ReadFin, 1, 0);
     z = y + c - a;
-    signal(calcuFinCount, 1);
+    Ssignal(calcuFinCount, 1);
 }
 ```
 
