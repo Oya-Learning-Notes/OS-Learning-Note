@@ -41,3 +41,8 @@ void consumer(){
 }
 ```
 
+This is actually simpler than the original PC model because `producer` process now have no limitation at all.
+
+# Refs
+
+[More Exercises - PC Model with Different Product And Limitation](./other_exercise/pc_with_limit.md)
