@@ -9,7 +9,7 @@ Personal learning notes for Operating System.
 
 Talks about `FCFS`, `SJF` and `HRRN (Highest Response Ratio Next)` algorithms.
 
-[Banker Algorithm](./banker_algo.md)
+[Banker Algorithm](./deadlock/banker.md)
 
 An algorithm that used to prevent circular set which will potentially cause deadlock.
 

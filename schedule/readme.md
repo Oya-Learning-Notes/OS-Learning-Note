@@ -1,7 +1,7 @@
 There are several types of scheduling task inside system.
 
 - Job Schedule Algorithm [Note Link](./job_schedule_algo.md)
-- Process Schedule Algorithm [Note Link](./process_schedule_algo.md)
+- Process Schedule Algorithm [Note Link](./proc_schedule.md)
 - Realtime Task Schedule Algorithm [Note Link](./realtime_schedule.md)
 
 **Job Schedule Algorithm:** 

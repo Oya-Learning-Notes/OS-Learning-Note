@@ -5,3 +5,4 @@ This directory is used to store some code simulation example for some scheduling
 # Contents
 
 [Process Scheduling - PSA and RR](./proc_algo_rr.md)
+[Banker's Algorithm](./banker.md)
