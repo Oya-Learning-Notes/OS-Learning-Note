@@ -36,9 +36,11 @@ SJF means Short-job-first. Still if we use the task list above then we get the s
 
 This is because when `1` arrived, there is no active task, so `1` start to run. Then when it finished, `2`, `3` and `4` were all arrived, so SJF pick up the least-process-time task to process.
 
-# PSA
+# PSA (HRRN)
 
 PSA (Priority-scheduleing algorithm) will decide the process sequence based on the _dynamic priority_ .
+
+> After checking, the name of this algorithm could be HRRN(Highest Response Ratio Next), please check textbook for more info.
 
 The priority could be calculated using formula below:
 

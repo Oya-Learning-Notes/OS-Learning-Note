@@ -1,2 +1,7 @@
 # ignore all test cpp files
 **/test.cpp
+
+# ignore replit.com properties
+**/.replit
+**/replit*.*
+

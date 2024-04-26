@@ -32,3 +32,5 @@ This break condition `No preemption`.
 Use resources algorithm to check before distribute resources to avoid circular set.
 
 That's what banker algorithm does.
+
+Check out [Banker Algorithm Notes](./banker_algo.md) for more info.
