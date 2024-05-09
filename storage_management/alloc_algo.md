@@ -48,3 +48,13 @@ This method **do NOT divide any block**.
 # Buddy System
 
 Check Textbook P142 for more info.
+
+# Hash Table
+
+Still, use linklist to store blocks with same size.
+
+![hash_table_algorithm](https://github.com/Oya-Learning-Notes/OS-Learning-Note/assets/61616918/552382ba-7c9c-4a8a-b521-71fd8b2d0c6a)
+
+This time we use hash table to indexing these linklists. Use size as key, linklist addr as value.
+
+If you want to get the linklist of 8kb blocks, use `table[8]`.
