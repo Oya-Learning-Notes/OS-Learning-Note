@@ -1,3 +1,11 @@
+# Definition
+
+| Name                   | Meaning                                                                                            |
+|------------------------|----------------------------------------------------------------------------------------------------|
+| Process Time           | The time this task required to be finished                                                         |
+| Response Time          | The time OS takes to finished the task (Including waiting time and process time)                   |
+| Weighted Response Time | Response Time / Process Time. __(Based on the definition this number will ALWAYS greater than 1)__ |
+
 # FCFS Algorithm
 
 FCFS (First-come first-serve) algorithm. This is quite simple, who come first then CPU will first start to process whom.
@@ -36,9 +44,9 @@ SJF means Short-job-first. Still if we use the task list above then we get the s
 
 This is because when `1` arrived, there is no active task, so `1` start to run. Then when it finished, `2`, `3` and `4` were all arrived, so SJF pick up the least-process-time task to process.
 
-# PSA
+# HRRN
 
-PSA (Priority-scheduleing algorithm) will decide the process sequence based on the _dynamic priority_ .
+HRRN _(Highest Response Ratio Next)_ will decide the process sequence based on the _dynamic priority_ .
 
 The priority could be calculated using formula below:
 
