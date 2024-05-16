@@ -25,3 +25,11 @@ In this chapter, we have:
 - 请求分页储存管理
     - 页面对换算法
 - 请求分段储存管理
+
+## Why we call it virtal storage
+
+Here we explain why this chapter called __virtal storage__.
+
+Virtual is a conception to _memory_. In one word, we __pretend that we have a much more memory that we actually not__. How we achieve this? We lie to program, tell them all they need is ready, but actually we just take it when they want to use it.
+
+And that's what Page Request Storage and Segment Request Storage has done.
