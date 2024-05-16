@@ -32,7 +32,7 @@ When `P` is `false`, `M` is `false`. Means this page has not been mutated, this 
 
 When `P` is `false`, `M` is `true`. Means this page has been mutated and swapped out. This time _Outer Storage Addr_ __points to swap storage area__ (对换区), where we could find this page next time we need it.
 
-## Minimum Physical Allocated Page
+# Minimum Physical Allocated Page
 
 Although we don't need to load all page to memory, there is min alloc page limitation.
 
@@ -43,3 +43,17 @@ In computer that support _indirect addressing (间接寻址)_, we need at least 
 For more complicated computer, the instruction is long so it may be stored in two different page, and source data and targeted data may also both stored in two different pages. In conclusion, we need `6` blocks.
 
 > If we don't allocate minimum needed block number, program may malfunction.
+
+# Memory Alloc Strategy
+
+From more conservative to more open:
+
+- _Fixed_ Allocation, _Local_ Replacement
+- _Variable_ Allocation, _Local_ Replacement
+- _Variable_ Allocation, _Global_ Replacement
+
+When _Allocation_ is _Fixed_, __the block size of the program is fixed__. Else if it's _Variable_, means the __blocks count that allocated to a program could become more or less (that is, dynamic/variable) in runtime__.
+
+When _Replacement_ is _Local_. Means when a program need to swap in a page, __it could only swap out one of it's own page at exchange__. Else if it's _Global_, means __one program could swap out page of other programs__.
+
+> For more info, checkout _Textbook P171_.
