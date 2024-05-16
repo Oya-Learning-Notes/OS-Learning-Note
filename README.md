@@ -5,13 +5,13 @@ Personal learning notes for Operating System.
 
 [Process Sync Problems](./process_sync/readme.md)
 
-[Job Schedule Algorithm](./job_schedule_algo.md)
-
-Talks about `FCFS`, `SJF` and `HRRN (Highest Response Ratio Next)` algorithms.
+[Job / Process / Task Schedule Problems](./schedule/readme.md)
 
 [Banker Algorithm](./deadlock/banker.md)
 
 An algorithm that used to prevent circular set which will potentially cause deadlock.
+
+[Storage Management](./storage_management/readme.md)
 
 # Issues & Pull Request
 
