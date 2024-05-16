@@ -1,9 +1,27 @@
-This directory is used to store notes about the Chapter 4 -- Storage management.
+This directory is used to store notes about the Chapter 4 -- Storage management. And Chapter 5 Virtual Storage.
 
 > Textbook P129
 
-# Contents
+# Chapter 4
 
-[Allocation Algorithms](./alloc_algo.md)
+In this chapter, we have:
 
-[Page Storage](./page_storage.md)
+- 分区分配
+    - 固定分区
+    - 动态分区
+        - 动态分区算法* ([Link](./alloc_algo.md))
+        - 紧凑
+- 对换
+    - 换出之后可能的空闲块合并* (P139)
+
+- 分页储存* ([Link](./page_storage.md))
+    - 多级页表
+    - 反置页表
+- 分段储存
+- 段页储存
+
+# Chapter 5
+
+- 请求分页储存管理
+    - 页面对换算法
+- 请求分段储存管理
