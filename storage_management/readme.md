@@ -20,6 +20,8 @@ In this chapter, we have:
 - 分段储存
 - 段页储存
 
+> `*` mark means it's important chapter / points.
+
 # Chapter 5
 
 - 请求分页储存管理([Link](./request_page.md))

@@ -33,4 +33,4 @@ Use resources algorithm to check before distribute resources to avoid circular s
 
 That's what banker algorithm does.
 
-Check out [Banker Algorithm Notes](./banker_algo.md) for more info.
+Check out [Banker Algorithm Notes](./banker.md) for more info.
