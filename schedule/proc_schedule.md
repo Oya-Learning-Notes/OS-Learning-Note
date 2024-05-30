@@ -9,6 +9,13 @@ We only need to know 2 specified process scheduling algorithm:
 
 Check out [RR Algorithm Exp Simulation](./exp/proc_algo_rr.md) for more info.
 
+Notice that there are two _interrupt streatgy_ on RR algorithm:
+
+- Only interrupt when time slice end.
+- Interrupt once task finished.
+
+> Checkout Textbook P100 for more info.
+
 # Multilevel Feedback Queue
 
 This means there are several queue with descending priority in system.
