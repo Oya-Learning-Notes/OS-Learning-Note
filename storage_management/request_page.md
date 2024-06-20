@@ -112,3 +112,7 @@ EAT &= \lambda + t + \varepsilon  + \lambda + t \\
     &=2(\lambda + t) + \varepsilon
 \end{align}
 $$
+
+For more info, check out the image below:
+
+![IMG_2186](https://github.com/Oya-Learning-Notes/OS-Learning-Note/assets/61616918/da9a2b6b-685b-4fba-ac3e-62b271ad0256)
