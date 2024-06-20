@@ -13,6 +13,8 @@ An algorithm that used to prevent circular set which will potentially cause dead
 
 [Storage Management](./storage_management/readme.md)
 
+[File System](./file_sys/readme.md)
+
 # Issues & Pull Request
 
 Issues and pull requests are welcome, if you find any problem or have any idea, please feel free to open a issue or pull request!
