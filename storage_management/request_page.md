@@ -76,3 +76,39 @@ When _Replacement_ is _Local_. Means when a program need to swap in a page, __it
 
 
 > For more info, checkout _Textbook P171_.
+
+# Process Time Calculation
+
+Denotation:
+
+- $\lambda$: Time to access _Fast Table_.
+- $t$: Time to access memory address.
+- $\varepsilon$: Time to deal with page interrpution (缺页中断处理时间)
+- $a$: _Fast Table_ hit rate.
+- $f$: _Page_ interrpution rate.
+
+In Fast Table:
+
+$$
+EAT = \lambda + t 
+$$
+
+Not in _Fast Table_, in _Page_:
+
+$$
+\begin{align}
+EAT &= \lambda + t + \lambda + t \\
+    &=2(\lambda + t)
+\end{align}
+$$
+
+Note: Sometimes first __$\lambda$ could be ignored if access to _Fast Table_ and the _Memory_ happened simulaneously__.
+
+Not in _Fast Table_, not in _Page_.
+
+$$
+\begin{align}
+EAT &= \lambda + t + \varepsilon  + \lambda + t \\
+    &=2(\lambda + t) + \varepsilon
+\end{align}
+$$
